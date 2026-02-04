@@ -80,8 +80,11 @@ class SendViewModel @Inject constructor(
             _txHash.value = null
             try {
                 val chainId = Web3Config.CHAIN_ID.toInt()
-                val mainnetNetwork = com.dynamic.sdk.android.Models.Network(JsonPrimitive(chainId))
-                sdk.wallets.switchNetwork(dynamicAuthDataSource.getWallet(), mainnetNetwork)
+                val mainnetNetwork = com.dynamic.sdk.android.Models.Network(
+                    JsonPrimitive(chainId))
+                sdk.wallets.switchNetwork(
+                    dynamicAuthDataSource.getWallet(),
+                    mainnetNetwork)
                 Log.d("SendTxScreen", "ChainId: $chainId")
                 val client = sdk.evm.createPublicClient(chainId)
                 val gasPrice = client.getGasPrice()
@@ -92,7 +95,7 @@ class SendViewModel @Inject constructor(
                     from = dynamicAuthDataSource.getAddress(),
                     to = _recipientAddress.value,
                     value = weiAmount,
-                    gas = BigInteger.valueOf(21000), // Standard gas limit for ETH transfer
+                    gas = BigInteger.valueOf(21000),
                     maxFeePerGas = maxFeePerGas,
                     maxPriorityFeePerGas = gasPrice
                 )

@@ -76,8 +76,6 @@ fun OtpVerificationSheet(
             }
 
             Spacer(modifier = Modifier.height(24.dp))
-
-            // OTP Code input
             OutlinedTextField(
                 value = code,
                 onValueChange = { code = it },
@@ -97,13 +95,10 @@ fun OtpVerificationSheet(
 
             Spacer(modifier = Modifier.height(16.dp))
             Log.d("Verification", didVerify.toString())
-            // Error message
             if (errorMessage != null) {
                 ErrorMessageView(message = errorMessage!!)
                 Spacer(modifier = Modifier.height(16.dp))
             }
-
-            // Success message
             if (didVerify) {
                 Box(
                     modifier = Modifier
@@ -124,8 +119,6 @@ fun OtpVerificationSheet(
                 Spacer(modifier = Modifier.height(16.dp))
                 onLoggedIn.invoke()
             }
-
-            // Verify button
             PrimaryButton(
                 title = if (isLoading) "Verifying..." else "Verify",
                 onClick = {

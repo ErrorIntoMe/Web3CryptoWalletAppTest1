@@ -28,11 +28,3 @@ interface DynamicAuthDataSource {
 }
 
 
-sealed interface AuthResult {
-    data class Success(
-        val walletAddress: String,
-        val chainId: Long?
-    ) : AuthResult
-
-    data class Error(val message: String) : AuthResult
-}

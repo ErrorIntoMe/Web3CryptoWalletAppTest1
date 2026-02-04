@@ -14,8 +14,6 @@ import kotlinx.coroutines.launch
 
 class SplashScreenViewModel : ViewModel() {
     private var didRoute = false
-    private val _navigateTo = MutableStateFlow<String?>("")
-    val navigateTo= _navigateTo.asStateFlow()
     fun start(
         onNavigateToLogin: () -> Unit,
         onNavigateToWallet: () -> Unit
