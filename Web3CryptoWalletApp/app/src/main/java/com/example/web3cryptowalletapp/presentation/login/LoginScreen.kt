@@ -110,6 +110,9 @@ fun LoginScreenWithDesign(
             label = { Text("Email") },
             placeholder = { Text("you@example.com") },
             singleLine = true,
+            colors = OutlinedTextFieldDefaults.colors(
+                unfocusedTextColor = Color.Black,
+                focusedTextColor = Color.Black,),
             modifier = Modifier
                 .fillMaxWidth()
                 .height(74.dp),
