@@ -1,0 +1,7 @@
+<resources>
+    <string name="app_name">AppCompose</string>
+    <string name="home">Главная</string>
+    <string name="massages">Сообщения</string>
+    <string name="AccountBox">Фото</string>
+
+</resources>
